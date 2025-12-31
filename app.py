@@ -2,7 +2,14 @@ import streamlit as st
 import pickle
 import pandas as pd
 import requests
-
+st.markdown("""
+<style>
+.stApp {
+    background-color: #1e1e2f;
+    color: white;
+}
+</style>
+""", unsafe_allow_html=True)
 def fetch_poster(movie_id):
     response=requests.get('https://api.themoviedb.org/3/movie/{}?api_key=ccd628b548f579c2ec440499fb364936'.format(movie_id))
     data=response.json()
